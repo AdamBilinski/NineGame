@@ -4,6 +4,7 @@ import Game from "./Game";
 
 import "bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./css/main.css"
 
 export class App extends React.Component{
     render(){
