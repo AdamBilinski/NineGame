@@ -2,8 +2,8 @@ import React from "react";
 import _ from "lodash";
 
 const Numbers = (props) => {
-    const numberClassName = (number) =>{
-        if(props.selectedNumbers.indexOf(number) > -1){
+    const numberClassName = (number) => {
+        if (props.selectedNumbers.indexOf(number) > -1) {
             return "selected";
         }
     }
@@ -11,9 +11,11 @@ const Numbers = (props) => {
         <div className="card text-center">
             <div>
                 {Numbers.list.map((number, i) =>
-                    <span key={i} className={numberClassName(number)}>{number}</span>
+                    <span key={i} className={numberClassName(number)}
+                        onClick={() => props.selectedNumber(number)}>
+                        {number}
+                    </span>
                 )}
-               
             </div>
         </div>
     )
