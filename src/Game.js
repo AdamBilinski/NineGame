@@ -120,5 +120,22 @@ render() {
 }
 
 var possibleCombinationSum = function (arr, n) {
-    return false;
+
+    var possibleCombinations = [];
+    for (var i = 0; i < arr.length; i++)
+	{
+		var currentValue = arr[i];
+		possibleCombinations.push(currentValue);
+		for (var j = 0; j < arr.length; j++)
+		{
+			var otherItem = arr[j];
+			if(i != j)
+			{
+				currentValue += otherItem;
+				possibleCombinations.push(currentValue);
+			}
+		}
+    }
+    
+    return possibleCombinations.includes(n);
 }
